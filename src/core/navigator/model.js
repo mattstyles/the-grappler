@@ -1,6 +1,6 @@
 
 export const initial = {
   nav: {
-    route: 'load'
+    route: 'main'
   }
 }

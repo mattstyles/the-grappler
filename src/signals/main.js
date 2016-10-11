@@ -7,6 +7,10 @@ var initialState = Object.assign({}, ...[
   nav,
   {main: {
     foo: 'bar'
+  }},
+  {grappler: {
+    u: 0,
+    v: 0
   }}
 ])
 
