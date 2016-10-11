@@ -12,6 +12,7 @@ const Statusbar = ({state}) => {
   return (
     <div className='Status-container'>
       <div className={classes}>
+        <span>Day {app.day} Week {app.week}</span>
         <span className='u-pullRight'>Cash ${app.cash}</span>
       </div>
     </div>

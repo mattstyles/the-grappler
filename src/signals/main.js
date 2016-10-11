@@ -6,7 +6,9 @@ import {initial as nav} from 'core/navigator/model'
 var initialState = Object.assign({}, ...[
   nav,
   {app: {
-    cash: 47
+    cash: 47,
+    week: 1,
+    day: 1
   }},
   {grappler: {
     u: 0,

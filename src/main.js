@@ -7,6 +7,11 @@ import {Navigator} from 'core/navigator/navigator'
 import MainView from 'views/main/main'
 import LoadView from 'views/load/load'
 
+// import mutators
+import {mutator as timeMutator} from 'core/mutators/time'
+console.log('tm', timeMutator)
+store.register(timeMutator)
+
 const App = ({state}) => (
   <Navigator state={state}>
     <MainView route='main' defaultRoute state={state} />

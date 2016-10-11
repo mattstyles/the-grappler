@@ -1,7 +1,7 @@
 
 import {store} from 'signals/main'
-import {reducer} from './reducer'
-store.register(reducer)
+import {mutator} from './mutator'
+store.register(mutator)
 
 const getChild = (children, route) => {
   let View = children.find(child => {
