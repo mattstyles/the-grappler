@@ -1,0 +1,31 @@
+
+.Options {
+  @btn-height: 24px;
+  @btn-fontSize: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  .Btn {
+    font-size: @btn-fontSize;
+    line-height: @btn-height;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .Icon {
+      width: @btn-height;
+      height: @btn-height;
+    }
+
+    span {
+      display: block;
+      padding-top: 2px;
+      margin: 0;
+    }
+  }
+
+  .Btn--isContinue {
+    background: @--color-db-blue;
+  }
+}
