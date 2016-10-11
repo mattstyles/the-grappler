@@ -5,12 +5,15 @@ import {initial as nav} from 'core/navigator/model'
 
 var initialState = Object.assign({}, ...[
   nav,
-  {main: {
-    foo: 'bar'
+  {app: {
+    cash: 47
   }},
   {grappler: {
     u: 0,
     v: 0
+  }},
+  {status: {
+    isHidden: false
   }}
 ])
 

@@ -1,26 +1,14 @@
 
 import {View} from 'components/view/view'
 import Grappler from 'components/grappler/grappler'
-
-import {store} from 'signals/main'
-store.register((state, event) => {
-  if (event.type === 'wrassler') {
-    state.grappler = {
-      u: Math.random() * 20 | 0,
-      v: Math.random() * 10 | 0
-    }
-  }
-
-  return state
-})
+import Statusbar from 'components/statusbar/statusbar'
 
 const MainView = ({state}) => {
   const {grappler} = state
   return (
     <View main>
-      <h1 onClick={e => {
-        store.emit({type: 'wrassler'})
-      }}>Main</h1>
+      <Statusbar state={state} />
+      <h1>Main</h1>
       <Grappler u={grappler.u} v={grappler.v} />
     </View>
   )
