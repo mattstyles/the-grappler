@@ -2,22 +2,29 @@
 .Options {
   @btn-height: 24px;
   @btn-fontSize: 18px;
+  @btn-padding: 10px;
 
   display: flex;
   flex-direction: column;
 
   .Btn {
+    position: relative;
     font-size: @btn-fontSize;
     line-height: @btn-height;
     border-radius: 6px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background: @--color-white;
     color: @--color-black30;
+    padding-top: @btn-padding;
+    padding-bottom: @btn-padding;
 
     .Icon {
       width: @btn-height;
       height: @btn-height;
+      padding-top: @btn-padding;
+      padding-bottom: @btn-padding;
+      position: absolute;
+      top: 0;
+      right: @btn-padding * 2;
     }
 
     span {

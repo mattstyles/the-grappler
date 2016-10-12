@@ -1,4 +1,6 @@
 
+import classnames from 'classnames'
+
 import {View} from 'components/view/view'
 import Grappler from 'components/grappler/grappler'
 import Statusbar from 'components/statusbar/statusbar'
@@ -9,6 +11,12 @@ import {advanceTime} from './actions'
 
 const MainView = ({state}) => {
   const {grappler} = state
+
+  let continueClasses = classnames({
+    'Icon-arrow--right': true,
+    'Icon--arrowRightBounce': state.app.day === 5
+  })
+
   return (
     <View main>
       <Statusbar state={state} />
@@ -19,10 +27,10 @@ const MainView = ({state}) => {
         <Button>Train</Button>
         <Button
           icon='ARROW'
-          iconClasses='u-pullRight Icon-arrow--right'
+          iconClasses={continueClasses}
           classes='Btn--isContinue'
           onClick={advanceTime}
-        >Press me</Button>
+        >Event</Button>
       </Options>
     </View>
   )
