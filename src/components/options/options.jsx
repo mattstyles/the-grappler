@@ -1,7 +1,7 @@
 
 const Options = ({children}) => {
   return (
-    <div className='Options'>
+    <div className='Options Container'>
       {children}
     </div>
   )

@@ -6,6 +6,7 @@ const Statusbar = ({state}) => {
 
   let classes = classnames({
     'Status': true,
+    'Container': true,
     'u-hide': status.isHidden
   })
 
