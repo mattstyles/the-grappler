@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist && mkdirp dist",
-    "lint": "standard",
+    "lint": "standard src",
     "build-scripts": "NODE_PATH=src NODE_ENV=production browserify --extension=jsx src/main.js | uglifyjs -cm > dist/main.js",
     "build-styles": "lessc src/styles.less --include-path=node_modules:src/core/styles:src --autoprefix='last 2 versions' --clean-css > dist/styles.css",
     "build-html": "cpy src/*.html dist",

@@ -18,14 +18,15 @@ const Grappler = ({u, v}) => {
     backgroundPositionY: 0 - ((v || 0) * 16)
   }
   return (
-    <div
-      className='Grappler'
-      style={style}
-      onClick={e => {
-        e.preventDefault()
-        store.emit({type: 'wrassler'})
-      }}
-    >
+    <div className='Grappler-container'>
+      <div
+        className='Grappler'
+        style={style}
+        onClick={e => {
+          e.preventDefault()
+          store.emit({type: 'wrassler'})
+        }}
+      ></div>
     </div>
   )
 }

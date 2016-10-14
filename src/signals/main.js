@@ -12,7 +12,17 @@ var initialState = Object.assign({}, ...[
   }},
   {grappler: {
     u: 0,
-    v: 0
+    v: 0,
+    fans: 0,
+    health: 100,
+    skill: 3,
+    agility: 15,
+    strength: 7,
+    weight: 245,
+    charisma: 23,
+    name: 'Macho Man',
+    finisher: 'Elbow Drop',
+    from: 'Alice Springs'
   }},
   {status: {
     isHidden: false

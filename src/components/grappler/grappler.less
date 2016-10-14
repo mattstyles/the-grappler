@@ -1,10 +1,23 @@
 
-.Grappler {
-  background: url('/assets/grapplers.png');
-  width: 8px;
-  height: 16px;
-  background-size: 160px 160px;
-  image-rendering: pixelated;
-  transform: scale(10);
-  transform-origin: top left;
+.Grappler-container {
+  @scale: 14;
+  @baseWidth: 8px;
+  @baseHeight: 16px;
+  @canvasWidth: 160px;
+  @canvasHeight: 160px;
+  @width: @baseWidth * @scale;
+  @height: @baseHeight * @scale;
+
+  width: @width;
+  height: @height;
+
+  .Grappler {
+    background: url('/assets/grapplers.png');
+    width: @baseWidth;
+    height: @baseHeight;
+    background-size: @canvasWidth @canvasHeight;
+    image-rendering: pixelated;
+    transform: scale(@scale);
+    transform-origin: top left;
+  }
 }

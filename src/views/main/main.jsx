@@ -2,7 +2,7 @@
 import classnames from 'classnames'
 
 import {View} from 'components/view/view'
-import Grappler from 'components/grappler/grappler'
+import Info from 'components/info/info'
 import Statusbar from 'components/statusbar/statusbar'
 import Button from 'components/button/button'
 import Options from 'components/options/options'
@@ -21,10 +21,13 @@ const MainView = ({state}) => {
     <View main>
       <Statusbar state={state} />
       <div className='Content'>
-        <Grappler u={grappler.u} v={grappler.v} />
+        <Info grappler={grappler} />
       </div>
       <Options>
-        <Button>Train</Button>
+        <Button>Relax</Button>
+        <Button>Practise</Button>
+        <Button>Work Out</Button>
+        <Button>Publicity</Button>
         <Button
           icon='ARROW'
           iconClasses={continueClasses}
