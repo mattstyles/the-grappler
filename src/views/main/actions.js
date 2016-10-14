@@ -64,12 +64,81 @@ const mutator = (state, event) => {
     ]
 
     // @TODO the set immediate hack isn’t great but needs fixing in the signal
-    setTimeout(() => {
-      store.emit({
-        type: TIME_ACTIONS.ADVANCE
-      })
-    }, 0)
+    setTimeout(advanceTime, 0)
 
+    return state
+  }
+
+  if (event.type === ACTIONS.PRACTISE) {
+    let amt = Math.random() * 3 | 0
+
+    state.grappler.skill += amt
+
+    state.talk.current = 0
+
+    let responses = [
+      'The session didn\'t go very well',
+      'I worked on my grappling',
+      'Wowsers that session was the bomb'
+    ]
+
+    state.talk.text = [
+      responses[amt],
+      'What shall we do next?'
+    ]
+
+    setTimeout(advanceTime, 0)
+    return state
+  }
+
+  if (event.type === ACTIONS.TRAIN) {
+    let amt = Math.random() * 3 | 0
+    let type = Math.random() * 2 | 0
+    let attr = ['strength', 'agility'][type]
+
+    state.grappler[attr] += amt
+
+    let strRes = [
+      'That session was too tough',
+      'I feel a little stronger',
+      'Man I love the weights'
+    ]
+    let agiRes = [
+      'I fell over a lot',
+      'Speed, speed, speed',
+      'Right on! I felt good on the top rope'
+    ]
+
+    let res = type === 0
+      ? strRes[amt]
+      : agiRes[amt]
+
+    state.talk.current = 0
+    state.talk.text = [
+      res,
+      'Next job boss'
+    ]
+
+    setTimeout(advanceTime, 0)
+    return state
+  }
+
+  if (event.type === ACTIONS.PUBLICITY) {
+    let fanAmt = Math.random() * 5 | 0
+    let charismaAmt = Math.random() < 0.2
+      ? 1
+      : 0
+
+    state.grappler.charisma += charismaAmt
+    state.grappler.fans += fanAmt
+
+    state.talk.current = 0
+    state.talk.text = [
+      'Boo yah! I made the front pages!',
+      'What do we do now, Captain?'
+    ]
+
+    setTimeout(advanceTime, 0)
     return state
   }
 
