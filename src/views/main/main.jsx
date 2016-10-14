@@ -8,18 +8,21 @@ import Button from 'components/button/button'
 import Options from 'components/options/options'
 import TalkPanel from 'components/talk/talk'
 
-import {advanceTime, actionRelax} from './actions'
-
-import {store} from 'signals/main'
-import mutator from './mutator'
-store.register(mutator)
+import {
+  advanceTime,
+  actionRelax,
+  actionPractise,
+  actionTrain,
+  actionPublicity
+} from './actions'
 
 const MainView = ({state}) => {
   const {grappler, talk} = state
+  const {day} = state.app
 
   let continueClasses = classnames({
     'Icon-arrow--right': true,
-    'Icon--arrowRightBounce': state.app.day === 5
+    'Icon--arrowRightBounce': day >= 5
   })
 
   return (
@@ -31,11 +34,21 @@ const MainView = ({state}) => {
       </div>
       <Options>
         <Button
+          classes={{'Btn--isDisabled': day >= 5}}
           onClick={actionRelax}
         >Relax</Button>
-        <Button>Practise</Button>
-        <Button>Work Out</Button>
-        <Button>Publicity</Button>
+        <Button
+          classes={{'Btn--isDisabled': day >= 5}}
+          onClick={actionPractise}
+        >Practise</Button>
+        <Button
+          classes={{'Btn--isDisabled': day >= 5}}
+          onClick={actionTrain}
+        >Work Out</Button>
+        <Button
+          classes={{'Btn--isDisabled': day >= 5}}
+          onClick={actionPublicity}
+        >Publicity</Button>
         <Button
           icon='ARROW'
           iconClasses={continueClasses}

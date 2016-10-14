@@ -20,6 +20,5 @@ store.register((state, event) => {
 })
 
 export const next = event => {
-  console.log('go next')
   store.emit({type: ACTIONS.NEXT})
 }
