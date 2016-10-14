@@ -7,6 +7,8 @@ store.register((state, event) => {
       u: Math.random() * 20 | 0,
       v: Math.random() * 10 | 0
     })
+
+    return state
   }
 
   return state
