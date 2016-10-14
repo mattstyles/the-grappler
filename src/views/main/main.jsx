@@ -8,7 +8,11 @@ import Button from 'components/button/button'
 import Options from 'components/options/options'
 import TalkPanel from 'components/talk/talk'
 
-import {advanceTime} from './actions'
+import {advanceTime, actionRelax} from './actions'
+
+import {store} from 'signals/main'
+import mutator from './mutator'
+store.register(mutator)
 
 const MainView = ({state}) => {
   const {grappler, talk} = state
@@ -26,7 +30,9 @@ const MainView = ({state}) => {
         <TalkPanel talk={talk} />
       </div>
       <Options>
-        <Button>Relax</Button>
+        <Button
+          onClick={actionRelax}
+        >Relax</Button>
         <Button>Practise</Button>
         <Button>Work Out</Button>
         <Button>Publicity</Button>

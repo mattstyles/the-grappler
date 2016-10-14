@@ -15,6 +15,7 @@ var initialState = Object.assign({}, ...[
     v: 0,
     fans: 0,
     health: 100,
+    maxHealth: 100,
     skill: 3,
     agility: 15,
     strength: 7,
