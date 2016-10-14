@@ -3,10 +3,10 @@
 import {store} from 'signals/main'
 store.register((state, event) => {
   if (event.type === 'wrassler') {
-    state.grappler = {
+    Object.assign(state.grappler, {
       u: Math.random() * 20 | 0,
       v: Math.random() * 10 | 0
-    }
+    })
   }
 
   return state
