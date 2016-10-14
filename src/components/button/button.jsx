@@ -42,7 +42,7 @@ const Button = def(props => {
   small: false,
   large: false,
   circle: false,
-  onClick: noop,
+  onClick: null,
   onPress: noop,
   classes: null,
   iconClasses: null

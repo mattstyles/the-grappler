@@ -30,9 +30,10 @@ var initialState = Object.assign({}, ...[
   {talk: {
     text: [
       'What do we do next, boss?',
-      'The next bout is against The Wanderer, it’ll be rough'
+      'The next bout is against The Wanderer, it’ll be rough',
+      'That last bout was the bomb! The crowd went wild!'
     ],
-    current: 1
+    current: 0
   }}
 ])
 
