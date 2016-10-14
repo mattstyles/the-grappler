@@ -26,6 +26,13 @@ var initialState = Object.assign({}, ...[
   }},
   {status: {
     isHidden: false
+  }},
+  {talk: {
+    text: [
+      'What do we do next, boss?',
+      'The next bout is against The Wanderer, it’ll be rough'
+    ],
+    current: 1
   }}
 ])
 

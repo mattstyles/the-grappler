@@ -9,7 +9,6 @@ import LoadView from 'views/load/load'
 
 // import mutators
 import {mutator as timeMutator} from 'core/mutators/time'
-console.log('tm', timeMutator)
 store.register(timeMutator)
 
 const App = ({state}) => (

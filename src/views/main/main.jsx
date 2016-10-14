@@ -6,11 +6,12 @@ import Info from 'components/info/info'
 import Statusbar from 'components/statusbar/statusbar'
 import Button from 'components/button/button'
 import Options from 'components/options/options'
+import TalkPanel from 'components/talk/talk'
 
 import {advanceTime} from './actions'
 
 const MainView = ({state}) => {
-  const {grappler} = state
+  const {grappler, talk} = state
 
   let continueClasses = classnames({
     'Icon-arrow--right': true,
@@ -22,6 +23,7 @@ const MainView = ({state}) => {
       <Statusbar state={state} />
       <div className='Content'>
         <Info grappler={grappler} />
+        <TalkPanel talk={talk} />
       </div>
       <Options>
         <Button>Relax</Button>
