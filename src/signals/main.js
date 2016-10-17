@@ -35,6 +35,9 @@ var initialState = Object.assign({}, ...[
       'That last bout was the bomb! The crowd went wild!'
     ],
     current: 0
+  }},
+  {bout: {
+    opponent: null
   }}
 ])
 

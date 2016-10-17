@@ -36,7 +36,7 @@ const MainView = ({state}) => {
         <Button
           classes={{'Btn--isDisabled': day >= 5}}
           onClick={actionRelax}
-        >Relax</Button>
+        >Rest</Button>
         <Button
           classes={{'Btn--isDisabled': day >= 5}}
           onClick={actionPractise}

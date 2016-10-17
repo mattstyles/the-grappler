@@ -9,7 +9,8 @@ export const ACTIONS = {
   'RELAX': 'action:relax',
   'PRACTISE': 'action:practise',
   'TRAIN': 'action:train',
-  'PUBLICITY': 'action:publicity'
+  'PUBLICITY': 'action:publicity',
+  'BOUT': 'action:bout'
 }
 
 /**
@@ -42,6 +43,12 @@ export const actionTrain = event => {
 export const actionPublicity = event => {
   store.emit({
     type: ACTIONS.PUBLICITY
+  })
+}
+
+export const toBout = event => {
+  store.emit({
+    type: ACTIONS.BOUT
   })
 }
 

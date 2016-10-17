@@ -7,6 +7,8 @@ import {Navigator} from 'core/navigator/navigator'
 import MainView from 'views/main/main'
 import LoadView from 'views/load/load'
 
+import {create} from 'core/grapplers/grappler'
+
 // import mutators
 import {mutator as timeMutator} from 'core/mutators/time'
 store.register(timeMutator)
@@ -27,4 +29,5 @@ store.observe(state => {
 
 if (process.env.DEBUG) {
   window.store = store
+  window.create = create
 }
