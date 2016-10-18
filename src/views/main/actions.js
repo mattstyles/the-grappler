@@ -149,6 +149,12 @@ const mutator = (state, event) => {
     return state
   }
 
+  if (event.type === ACTIONS.BOUT) {
+    
+
+    return state
+  }
+
   return state
 }
 

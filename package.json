@@ -5,7 +5,7 @@
   "description": "ogam the grappler",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape -r babel-register spec/*.js",
     "clean": "rimraf dist && mkdirp dist",
     "lint": "standard src",
     "build-scripts": "NODE_PATH=src NODE_ENV=production browserify --extension=jsx src/main.js | uglifyjs -cm > dist/main.js",
@@ -65,6 +65,7 @@
     "babel-plugin-lodash": "^3.2.9",
     "babel-plugin-transform-react-require": "^1.0.1",
     "babel-preset-urban": "^0.5.0",
+    "babel-register": "^6.16.3",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "budo": "^9.0.0",

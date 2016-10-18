@@ -31,3 +31,9 @@ if (process.env.DEBUG) {
   window.store = store
   window.create = create
 }
+
+import {d} from 'core/utils/number'
+
+console.log(d())
+
+window.d = d
