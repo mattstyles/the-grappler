@@ -1,5 +1,5 @@
 
-import {random} from 'lodash/fp'
+import random from 'lodash/fp/random'
 
 export const uid = () => {
   return (Math.random() * 10000000)

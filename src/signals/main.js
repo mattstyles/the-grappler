@@ -2,6 +2,7 @@
 import {Signal} from 'raid'
 
 import {initial as nav} from 'core/navigator/model'
+import {create} from 'core/grapplers/grappler'
 
 var initialState = Object.assign({}, ...[
   nav,
@@ -10,21 +11,10 @@ var initialState = Object.assign({}, ...[
     week: 1,
     day: 1
   }},
-  {grappler: {
-    u: 0,
-    v: 0,
+  {grappler: Object.assign(create(), {
     fans: 0,
-    health: 100,
-    maxHealth: 100,
-    skill: 3,
-    agility: 15,
-    strength: 7,
-    weight: 245,
-    charisma: 23,
-    name: 'Macho Man',
-    finisher: 'Elbow Drop',
-    from: 'Alice Springs'
-  }},
+    health: 100
+  })},
   {status: {
     isHidden: false
   }},

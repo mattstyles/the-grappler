@@ -1,5 +1,7 @@
 
-import {random} from 'lodash/fp'
+import random from 'lodash/fp/random'
+import flow from 'lodash/fp/flow'
+import {d} from 'core/utils/number'
 
 const applyTexture = base => {
   return Object.assign(base, {
@@ -11,28 +13,30 @@ const applyTexture = base => {
 const applyBase = base => {
   let health = 10 + (random(10, 25) + random(10, 25))
   return Object.assign(base, {
-    fans: random(0, 10),
+    fans: d(2),
     health: health,
-    maxHealth: maxHealth,
-    stamina: random(0, 6) + random(0, 6)
+    maxHealth: health,
+    stamina: d(2),
+    agility: d(2),
+    strength: d(2),
+    charisma: d(2),
+    skill: d(),
+    weight: 220
+  })
+}
+
+const applyDetails = base => {
+  return Object.assign(base, {
+    name: 'Elias Terblanche',
+    from: 'Parts Unknown',
+    finisher: 'Body Slam'
   })
 }
 
 export const create = (tier = 1) => {
-  let health = 25 + (random(0, 20) * tier)
-  return {
-    u: 0,
-    v: 0,
-    fans: random(0, 10) * tier,
-    health: health,
-    maxHealth: health,
-    skill: 1 + (random(0, 5) * tier),
-    agility: 15,
-    strength: 7,
-    weight: 245,
-    charisma: 23,
-    name: 'Macho Man',
-    finisher: 'Elbow Drop',
-    from: 'Alice Springs'
-  }
+  return flow(
+    applyBase,
+    applyTexture,
+    applyDetails
+  )({})
 }
