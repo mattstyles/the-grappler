@@ -1,6 +1,8 @@
 
 import {store} from 'signals/main'
-import {ACTIONS as TIME_ACTIONS} from 'core/actions/time'
+import {advanceTime} from 'core/actions/time'
+
+import {mutRelax} from 'core/mutators/mainOptions/relax'
 
 /**
  * Actions
@@ -16,12 +18,6 @@ export const ACTIONS = {
 /**
  * Action helpers
  */
-export const advanceTime = event => {
-  store.emit({
-    type: TIME_ACTIONS.ADVANCE
-  })
-}
-
 export const actionRelax = event => {
   store.emit({
     type: ACTIONS.RELAX
@@ -57,23 +53,7 @@ export const toBout = event => {
  */
 const mutator = (state, event) => {
   if (event.type === ACTIONS.RELAX) {
-    const {health, maxHealth} = state.grappler
-
-    if (health < maxHealth) {
-      let amt = Math.min(Math.random() * 5 | 0, maxHealth - health)
-      state.grappler.health += amt
-    }
-
-    state.talk.current = 0
-    state.talk.text = [
-      'It\'s good to have a day off',
-      'What next chief?'
-    ]
-
-    // @TODO the set immediate hack isn’t great but needs fixing in the signal
-    setTimeout(advanceTime, 0)
-
-    return state
+    return mutRelax(state)
   }
 
   if (event.type === ACTIONS.PRACTISE) {
@@ -150,8 +130,6 @@ const mutator = (state, event) => {
   }
 
   if (event.type === ACTIONS.BOUT) {
-    
-
     return state
   }
 

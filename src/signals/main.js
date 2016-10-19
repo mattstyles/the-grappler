@@ -2,7 +2,7 @@
 import {Signal} from 'raid'
 
 import {initial as nav} from 'core/navigator/model'
-import {create} from 'core/grapplers/grappler'
+import {create as createGrappler} from 'core/service/grappler'
 
 var initialState = Object.assign({}, ...[
   nav,
@@ -11,7 +11,7 @@ var initialState = Object.assign({}, ...[
     week: 1,
     day: 1
   }},
-  {grappler: Object.assign(create(), {
+  {grappler: Object.assign(createGrappler(), {
     fans: 0,
     health: 100
   })},
