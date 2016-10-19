@@ -3,6 +3,7 @@ import {store} from 'signals/main'
 import {advanceTime} from 'core/actions/time'
 
 import {mutRelax} from 'core/mutators/mainOptions/relax'
+import {mutPractise} from 'core/mutators/mainOptions/practise'
 
 /**
  * Actions
@@ -57,25 +58,7 @@ const mutator = (state, event) => {
   }
 
   if (event.type === ACTIONS.PRACTISE) {
-    let amt = Math.random() * 3 | 0
-
-    state.grappler.skill += amt
-
-    state.talk.current = 0
-
-    let responses = [
-      'The session didn\'t go very well',
-      'I worked on my grappling',
-      'Wowsers that session was the bomb'
-    ]
-
-    state.talk.text = [
-      responses[amt],
-      'What shall we do next?'
-    ]
-
-    setTimeout(advanceTime, 0)
-    return state
+    return mutPractise(state)
   }
 
   if (event.type === ACTIONS.TRAIN) {

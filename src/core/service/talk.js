@@ -22,6 +22,23 @@ const relaxAmount = [
   'I needed that rest'
 ]
 
+const practisePoor = [
+  'That session didn\'t go very well',
+  'You should hire a new coach',
+  'Whatever'
+]
+const practiseGood = [
+  'I worked hard on my grappling',
+  'I worked on my grappling',
+  'That session went well',
+  'I feel good after that'
+]
+const practiseGreat = [
+  'That session was the bomb',
+  'I wish every session could be so good',
+  'Wowsers that was awesome'
+]
+
 /**
  * Returns text for an action prompt
  */
@@ -35,6 +52,19 @@ export const getPrompt = state => {
  */
 export const getRelaxText = amount => {
   return amount > 0
-    ? relaxAmount[random(relaxAmount.length - 1)(0)]
-    : relaxNull[random(relaxNull.length - 1)(0)]
+    ? relaxAmount[random(0, relaxAmount.length - 1)]
+    : relaxNull[random(0, relaxNull.length - 1)]
+}
+
+/**
+ * Practise responses
+ */
+export const getPractisePoor = state => {
+  return practisePoor[random(0, practisePoor.length - 1)]
+}
+export const getPractiseGood = state => {
+  return practiseGood[random(0, practiseGood.length - 1)]
+}
+export const getPractiseGreat = state => {
+  return practiseGreat[random(0, practiseGreat.length - 1)]
 }
