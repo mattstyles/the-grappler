@@ -39,6 +39,37 @@ const practiseGreat = [
   'Wowsers that was awesome'
 ]
 
+const strengthPoor = [
+  'I felt weak and ineffective',
+  'Training didn\'t go very well',
+  'The weights were too heavy today'
+]
+const strengthGood = [
+  'I feel good after that',
+  'Getting stronger all the time',
+  'That session was great'
+]
+const strengthGreat = [
+  'I feel like I could wrestle a bear!',
+  'Almost as strong as the Hulk',
+  'I was a beast in the gym today'
+]
+const agilityPoor = [
+  'I felt clumsy and heavy',
+  'Training didn\'t go very well',
+  'I fell over a lot'
+]
+const agilityGood = [
+  'Gym time went well',
+  'Getting quicker all the time',
+  'That session was great'
+]
+const agilityGreat = [
+  'I was like lightning today',
+  'Almost as quick as a cheetah',
+  'My footwork is the best'
+]
+
 /**
  * Returns text for an action prompt
  */
@@ -67,4 +98,26 @@ export const getPractiseGood = state => {
 }
 export const getPractiseGreat = state => {
   return practiseGreat[random(0, practiseGreat.length - 1)]
+}
+
+/**
+ * Training responses
+ */
+export const getStrengthPoor = state => {
+  return strengthPoor[random(0, strengthPoor.length - 1)]
+}
+export const getStrengthGood = state => {
+  return strengthGood[random(0, strengthGood.length - 1)]
+}
+export const getStrengthGreat = state => {
+  return strengthGreat[random(0, strengthGreat.length - 1)]
+}
+export const getAgilityPoor = state => {
+  return agilityPoor[random(0, agilityPoor.length - 1)]
+}
+export const getAgilityGood = state => {
+  return agilityGood[random(0, agilityGood.length - 1)]
+}
+export const getAgilityGreat = state => {
+  return agilityGreat[random(0, agilityGreat.length - 1)]
 }

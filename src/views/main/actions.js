@@ -4,6 +4,7 @@ import {advanceTime} from 'core/actions/time'
 
 import {mutRelax} from 'core/mutators/mainOptions/relax'
 import {mutPractise} from 'core/mutators/mainOptions/practise'
+import {mutTrain} from 'core/mutators/mainOptions/train'
 
 /**
  * Actions
@@ -62,36 +63,40 @@ const mutator = (state, event) => {
   }
 
   if (event.type === ACTIONS.TRAIN) {
-    let amt = Math.random() * 3 | 0
-    let type = Math.random() * 2 | 0
-    let attr = ['strength', 'agility'][type]
-
-    state.grappler[attr] += amt
-
-    let strRes = [
-      'That session was too tough',
-      'I feel a little stronger',
-      'Man I love the weights'
-    ]
-    let agiRes = [
-      'I fell over a lot',
-      'Speed, speed, speed',
-      'Right on! I felt good on the top rope'
-    ]
-
-    let res = type === 0
-      ? strRes[amt]
-      : agiRes[amt]
-
-    state.talk.current = 0
-    state.talk.text = [
-      res,
-      'Next job boss'
-    ]
-
-    setTimeout(advanceTime, 0)
-    return state
+    return mutTrain(state)
   }
+
+  // if (event.type === ACTIONS.TRAIN) {
+  //   let amt = Math.random() * 3 | 0
+  //   let type = Math.random() * 2 | 0
+  //   let attr = ['strength', 'agility'][type]
+  //
+  //   state.grappler[attr] += amt
+  //
+  //   let strRes = [
+  //     'That session was too tough',
+  //     'I feel a little stronger',
+  //     'Man I love the weights'
+  //   ]
+  //   let agiRes = [
+  //     'I fell over a lot',
+  //     'Speed, speed, speed',
+  //     'Right on! I felt good on the top rope'
+  //   ]
+  //
+  //   let res = type === 0
+  //     ? strRes[amt]
+  //     : agiRes[amt]
+  //
+  //   state.talk.current = 0
+  //   state.talk.text = [
+  //     res,
+  //     'Next job boss'
+  //   ]
+  //
+  //   setTimeout(advanceTime, 0)
+  //   return state
+  // }
 
   if (event.type === ACTIONS.PUBLICITY) {
     let fanAmt = Math.random() * 5 | 0

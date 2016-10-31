@@ -7,7 +7,7 @@ import {Navigator} from 'core/navigator/navigator'
 import MainView from 'views/main/main'
 import LoadView from 'views/load/load'
 
-import {create} from 'core/grapplers/grappler'
+import {create} from 'core/service/grappler'
 
 // import mutators
 import {mutator as timeMutator} from 'core/mutators/time'
@@ -25,6 +25,10 @@ store.observe(state => {
     <App state={state} />,
     document.querySelector('.js-main')
   )
+
+  if (process.env.DEBUG) {
+    window.state = state
+  }
 })
 
 if (process.env.DEBUG) {
