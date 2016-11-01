@@ -1,6 +1,5 @@
 
 import {store} from 'signals/main'
-import {advanceTime} from 'core/actions/time'
 
 import {mutRelax} from 'core/mutators/mainOptions/relax'
 import {mutPractise} from 'core/mutators/mainOptions/practise'
@@ -72,6 +71,12 @@ const mutator = (state, event) => {
   }
 
   if (event.type === ACTIONS.BOUT) {
+    state.app.day += 1
+
+    if (state.app.day === 6) {
+      state.app.day = 1
+      state.app.week += 1
+    }
     return state
   }
 

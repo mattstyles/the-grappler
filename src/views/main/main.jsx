@@ -9,11 +9,11 @@ import Options from 'components/options/options'
 import TalkPanel from 'components/talk/talk'
 
 import {
-  advanceTime,
   actionRelax,
   actionPractise,
   actionTrain,
-  actionPublicity
+  actionPublicity,
+  toBout
 } from './actions'
 
 const MainView = ({state}) => {
@@ -53,7 +53,7 @@ const MainView = ({state}) => {
           icon='ARROW'
           iconClasses={continueClasses}
           classes='Btn--isContinue'
-          onClick={advanceTime}
+          onClick={toBout}
         >Event</Button>
       </Options>
     </View>

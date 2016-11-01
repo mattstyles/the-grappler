@@ -20,10 +20,12 @@ const App = ({state}) => (
   </Navigator>
 )
 
+let main = document.querySelector('.js-main')
+
 store.observe(state => {
   render(
     <App state={state} />,
-    document.querySelector('.js-main')
+    main
   )
 
   if (process.env.DEBUG) {
