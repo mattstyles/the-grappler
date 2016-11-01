@@ -8,16 +8,21 @@ import {
   getStrengthGreat,
   getAgilityPoor,
   getAgilityGood,
-  getAgilityGreat
+  getAgilityGreat,
+  getStaminaPoor,
+  getStaminaGood,
+  getStaminaGreat
 } from 'core/service/talk'
 
 export const mutTrain = state => {
-  let type = random(0, 6)
-  let amt = random(1, 3) * (type % 3)
-  let attr = [
+  let traits = [
     'strength',
-    'agility'
-  ][type / 3 | 0]
+    'agility',
+    'stamina'
+  ]
+  let type = random(0, 3 * traits.length)
+  let amt = random(1, 3) * (type % 3)
+  let attr = traits[type / 3 | 0]
 
   state.grappler[attr] += amt
 
@@ -29,7 +34,10 @@ export const mutTrain = state => {
     getStrengthGreat,
     getAgilityPoor,
     getAgilityGood,
-    getAgilityGreat
+    getAgilityGreat,
+    getStaminaPoor,
+    getStaminaGood,
+    getStaminaGreat
   ]
 
   state.talk.text = [

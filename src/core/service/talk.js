@@ -69,6 +69,21 @@ const agilityGreat = [
   'Almost as quick as a cheetah',
   'My footwork is the best'
 ]
+const staminaPoor = [
+  'Cardio is so hard :(',
+  'Training didn\'t go very well',
+  'I felt sluggish'
+]
+const staminaGood = [
+  'I love interval training',
+  'Getting fitter all the time',
+  'That was a good workout'
+]
+const staminaGreat = [
+  'I\'m as fit as a fiddle',
+  'I gave that session all I had',
+  'That session was the bomb'
+]
 
 /**
  * Returns text for an action prompt
@@ -120,4 +135,13 @@ export const getAgilityGood = state => {
 }
 export const getAgilityGreat = state => {
   return agilityGreat[random(0, agilityGreat.length - 1)]
+}
+export const getStaminaPoor = state => {
+  return staminaPoor[random(0, staminaPoor.length - 1)]
+}
+export const getStaminaGood = state => {
+  return staminaGood[random(0, staminaGood.length - 1)]
+}
+export const getStaminaGreat = state => {
+  return staminaGreat[random(0, staminaGreat.length - 1)]
 }
