@@ -22,6 +22,13 @@ const relaxAmount = [
   'I needed that rest'
 ]
 
+const publicity = [
+  'Boo yah! I made the front pages!',
+  'Any publicity is good publicity',
+  'The media love me',
+  'My fans love me'
+]
+
 const practisePoor = [
   'That session didn\'t go very well',
   'You should hire a new coach',
@@ -100,6 +107,13 @@ export const getRelaxText = amount => {
   return amount > 0
     ? relaxAmount[random(0, relaxAmount.length - 1)]
     : relaxNull[random(0, relaxNull.length - 1)]
+}
+
+/**
+ * Publicity action responses
+ */
+export const getPublicityText = amt => {
+  return publicity[random(0, publicity.length - 1)]
 }
 
 /**

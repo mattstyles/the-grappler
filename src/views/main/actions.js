@@ -5,6 +5,7 @@ import {advanceTime} from 'core/actions/time'
 import {mutRelax} from 'core/mutators/mainOptions/relax'
 import {mutPractise} from 'core/mutators/mainOptions/practise'
 import {mutTrain} from 'core/mutators/mainOptions/train'
+import {mutPublicity} from 'core/mutators/mainOptions/publicity'
 
 /**
  * Actions
@@ -67,22 +68,7 @@ const mutator = (state, event) => {
   }
 
   if (event.type === ACTIONS.PUBLICITY) {
-    let fanAmt = Math.random() * 5 | 0
-    let charismaAmt = Math.random() < 0.2
-      ? 1
-      : 0
-
-    state.grappler.charisma += charismaAmt
-    state.grappler.fans += fanAmt
-
-    state.talk.current = 0
-    state.talk.text = [
-      'Boo yah! I made the front pages!',
-      'What do we do now, Captain?'
-    ]
-
-    setTimeout(advanceTime, 0)
-    return state
+    return mutPublicity(state)
   }
 
   if (event.type === ACTIONS.BOUT) {
