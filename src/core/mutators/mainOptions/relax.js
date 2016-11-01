@@ -14,6 +14,8 @@ export const mutRelax = state => {
     state.grappler.health += amt
   }
 
+  state.app.cash -= 1
+
   state.talk.current = 0
   state.talk.text = [
     getRelaxText(amt),

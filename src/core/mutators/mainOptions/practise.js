@@ -11,6 +11,7 @@ export const mutPractise = state => {
   let amt = Math.random() * 3 | 0
 
   state.grappler.skill += amt
+  state.app.cash -= 4
 
   state.talk.current = 0
 

@@ -25,6 +25,7 @@ export const mutTrain = state => {
   let attr = traits[type / 3 | 0]
 
   state.grappler[attr] += amt
+  state.app.cash -= 5
 
   state.talk.current = 0
 
